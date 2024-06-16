@@ -1,18 +1,29 @@
-# DSA3101 Manpower Optimisation for MFLG
+# RestaurantManager👨🏻‍🍳
 
-👋 Hello! This is the deployment repo for our group's application stack. The frontend and backend repos are added as submodules to this repository, tagged to a commit hash that is stable and working.
+RestaurantManager is a web application designed to help restaurant owners efficiently manage their weekly staff rosters and forecast customer demand. 
 
-For more detailed information on the [frontend](https://github.com/kevin-pek/dsa3101-frontend/) and [backend](https://github.com/shecheeyee/dsa3101-manpower-optimization-ci-backend/) repos please click the links here! To learn more about how to use our frontend application do check out our [user guide](https://docs.google.com/document/d/1UIK-Pzp5kED8erwhT2WhK-t0zv-lOWuc3SqK3n4nTaQ/edit?usp=sharing) as well!
+## Features
 
-Check out our [wiki](https://github.com/kevin-pek/dsa3101-deployment/wiki) for more information about our project!
+### 1. Automatic Roster Generation
+Automatically creates a weekly staff roster for the week ahead based on demand forecasts and staff availability.
 
-Confused? Need help running this app? Check out our [help](https://github.com/kevin-pek/dsa3101-deployment/wiki/Help) page for a list of common issues and FAQs!
+<img src="images/roster.png" alt="roster" width="400" />
 
-## Prerequisites
+### 2. Demand Forecasting
+Using an `ARIMA` (AutoRegressive Integrated Moving Average) model, the application predicts the expected number of customers for the current week.
 
-The entire application stack runs on docker, so please make sure you have [Docker](https://docs.docker.com/engine/install/) installed.
+<img src="images/demand_forecast.png" alt="demand_forecast" width="400" />
+
+### 3. Employee and Events Management
+Easily manage employee details and events such as public holidays and special occasions.
+
+<img src="images/employee_table.png" alt="employee table" width="400" />
+<img src="images/events_table.png" alt="events table" width="400" />
 
 ## Getting Started
+
+### Prerequisites
+The entire application stack runs on docker, so please make sure you have [Docker](https://docs.docker.com/engine/install/) installed.
 
 To get started clone this repository, navigate to into the directory and run the following commands:
 
@@ -21,10 +32,17 @@ git submodule init    # registers the frontend and backend repos as submodules
 git submodule update  # pulls the submodule repos
 docker compose up -d  # run the entire stack (MySQL, Flask API, React App) in detached mode
 ```
-NOTE: When you first run the app, the dashboard will not display any demand forecast. To view the demand forecast, make sure to input the actual customer count, click "Submit", and wait for the demand forecasting chart to be updated!
 
 Once all containers are running the frontend app should now be accessible on port 3000. See `docker-compose.yml` for the port mappings for each service. Alternatively, you can also clone the frontend and backend repos separately and run them manually. See their respective repos for more information.
 
 To login to the app, use the credentials `manager` and `pword123`.
 
-Should you wish to make any changes in the frontend/backend repositories, you can edit them within the `frontend` and `backend` directories and push/pull any changes while inside the respective directories.
+## Credits
+This project would not have been possible without the hard work and dedication of the following **AMAZING** contributors:
+- [@shecheeyee](https://github.com/shecheeyee)
+- [@mersoncheong](https://github.com/mersoncheong)
+- [@aarontxz](https://github.com/aarontxz)
+- [@kevin-pek](https://github.com/kevin-pek)
+- [@asstella](https://github.com/asstella)
+- [@chanyuxin](https://github.com/chanyuxin)
+- [@fadilahzak](https://github.com/fadilahzak)
